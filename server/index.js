@@ -14,17 +14,15 @@ app.use(cors());
 app.use("/user", userRouter);
 
 dotenv.config({ path: "./config.env" });
-const PORT = process.env.port || 300;
+const CONNECTION_URI = process.env.ATLAS_URI;
+const PORT = process.env.port || 3000;
 
-import { connectToServer } from "./db/conn.js";
-
-mongoose.connect('mongodb://localhost:3000/PharmEasyDB')
+mongoose
+  .connect(CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log( 'Database Successfully Connected' ))
+  .catch(err => console.log(`Database connection failed due to ${err}`));
 
 app.listen(PORT, () => {
-  // perform database connection when server starts
-  connectToServer(function (error) {
-    if (error)
-      console.error(`${error} from connecting the DB to the server`);
-  });
+  console.log(`Server is running on port ${PORT}`);
 });
   
