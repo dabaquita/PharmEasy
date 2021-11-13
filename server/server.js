@@ -24,9 +24,18 @@ app.listen(port, () => {
 });
 
 // Register
-app.post('/api/register', (req, res) => {
+app.post('/api/register', async (req, res) => {
   console.log(req.body)
-  res.json({ status: 'ok' })
 
+  try {
+    const user = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    })
 
+    res.send(user)
+  } catch (err) {
+    res.json({ status: 'error', error: 'Duplication email' })
+  }
 })
