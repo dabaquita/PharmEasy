@@ -5,6 +5,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Paper } from '@mui/material';
+
 
 
 const BasicInfoCard = (
@@ -27,6 +29,8 @@ const BasicInfoCard = (
       <Button size="small">Edit Card</Button>
       <Button size="small">Add Card</Button>
     </CardActions>
+    
+
   </React.Fragment>
 );
 
@@ -34,6 +38,9 @@ export default function OutlinedCard() {
   return (
     <Box sx={{ minWidth: 400 }}>
       <Card variant="outlined">{BasicInfoCard}</Card>
+      <Paper elevation={0} />
+        <Paper />
+        <Paper elevation={3} />
     </Box>
   );
 }
