@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const mongoose = require("mongoose");
-
 
 app.use(express.json());
 app.use(cors());
 
+const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:3000/PharmEasyDB')
 
 require("dotenv").config({ path: "./config.env" });
