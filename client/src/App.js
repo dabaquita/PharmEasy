@@ -1,11 +1,12 @@
 import { Grid, Container, Box } from '@mui/material';
 import './App.css';
-import FirstNameTextField from './components/FirstNameTextField';
-import LastNameTextField from './components/LastNameTextField';
-import EmailTextField from './components/EmailTextField';
-import PasswordTextField from './components/PasswordTextField';
-import SignInButton from './components/SignInButton';
-import SignUpButton from './components/SignUpButton';
+import FirstNameTextField from './components/FirstNameTextField/FirstNameTextField';
+import LastNameTextField from './components/LastNameTextField/LastNameTextField';
+import EmailTextField from './components/EmailTextField/EmailTextField';
+import PasswordTextField from './components/PasswordTextField/PasswordTextField';
+import SignInButton from './components/SignInButton/SignInButton';
+import SignUpButton from './components/SignUpButton/SignUpButton';
+import ForgotPassword from './components/ForgotPasswordHyperlink/ForgotPasswordHyperlink';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Grid>
                 <EmailTextField/>
                 <PasswordTextField/>
+                <ForgotPassword/>
               </Grid>
 
               <Grid>
