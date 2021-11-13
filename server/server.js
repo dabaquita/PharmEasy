@@ -23,7 +23,7 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-// Register
+// API: Register
 app.post('/api/register', async (req, res) => {
   console.log(req.body)
 
@@ -34,8 +34,24 @@ app.post('/api/register', async (req, res) => {
       password: req.body.password
     })
 
-    res.send(user)
+    res.json({ status: 'ok' })
   } catch (err) {
-    res.json({ status: 'error', error: 'Duplication email' })
+    console.log(err)
+    res.json({ status: 'error', error: 'Duplicate email' })
+  }
+})
+
+// API: Login
+app.post('/api/login', async (req, res) => {
+  const user = await User.findOne({
+    email: req.body.email,
+    password: req.body.password
+  })
+
+  if (user) {
+    return res.json({ status: 'ok', user: true })
+  } else {
+    console.log(err)
+    return res.json({ status: 'error', user: false })
   }
 })
