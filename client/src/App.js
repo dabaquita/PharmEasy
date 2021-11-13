@@ -7,6 +7,9 @@ import PasswordTextField from './components/PasswordTextField/PasswordTextField'
 import SignInButton from './components/SignInButton/SignInButton';
 import SignUpButton from './components/SignUpButton/SignUpButton';
 import ForgotPassword from './components/ForgotPasswordHyperlink/ForgotPasswordHyperlink';
+import BasicInfoCard from './components/BasicInfoCard/BasicInfoCard';
+import InsuranceInfoCard from './components/InsuranceInfoCard/InsuranceInfoCard';
+import MedicationListGrid from './components/MedicationList/MedicationListGrid';
 
 
 function App() {
@@ -39,13 +42,21 @@ function App() {
                 <SignInButton/>
               </Grid>
               <Grid>
-                <SignUpButton/>
+                <SignUpButton/> 
+                <BasicInfoCard/> <br />
+                <InsuranceInfoCard/> <br />
+
+                <MedicationListGrid />
+
               </Grid>
 
 
 
+
             </Grid>
+
           </Box>
+
     </Container>
 
   );
