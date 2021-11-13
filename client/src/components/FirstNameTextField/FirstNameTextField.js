@@ -4,12 +4,13 @@ import TextField from '@mui/material/TextField';
 const FirstNameTextField = () => {
     return (
         <TextField
-            autoComplete="given-name"
-            name="firstName"
+            margin="normal"
             required
             fullWidth
             id="firstName"
             label="First Name"
+            name="firstName"
+            autoComplete="given-name"
             autoFocus
         />
     );
