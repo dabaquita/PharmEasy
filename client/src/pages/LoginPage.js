@@ -25,7 +25,7 @@ const StyledPaper = styled(Paper, {
 function LoginPage({ state, onClick }) {
   return (
     <Container component="main" maxWidth="xs">
-      <Navigation onClick={onClick} />
+      <Navigation state={state} onClick={onClick} />
       <LoginForm />
     </Container>
   );

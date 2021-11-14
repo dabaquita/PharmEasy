@@ -52,12 +52,9 @@ const FormHeading = styled(Typography, {
   position: "relative",
   alignItems: "center",
   justifyContent: "center",
-})
-
+});
 
 const LoginForm = () => {
-
-  
   return (
     <Box
       component="form"
@@ -72,7 +69,7 @@ const LoginForm = () => {
       autoComplete="off"
     >
       <StyledPaper>
-      <FormHeading>Login</FormHeading>
+        <FormHeading>Login</FormHeading>
         <div>
           <TextField
             required
@@ -107,7 +104,7 @@ const LoginForm = () => {
               style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
               disabled={true}
               disableElevation={true}
-              >
+            >
               Sign Up
             </SubmitButton>
             <SubmitButton
