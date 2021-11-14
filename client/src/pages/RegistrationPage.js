@@ -1,7 +1,6 @@
 import { Button, Container } from "@mui/material";
 import Navigation from "../components/Navigation.js";
 import RegistrationForm from "../components/RegistrationForm";
-import LoginForm from "../components/LoginForm";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/system";
 
@@ -23,10 +22,16 @@ const StyledPaper = styled(Paper, {
 });
 
 function LoginPage({ state, onClick }) {
+
   return (
     <Container component="main" maxWidth="xs">
-      <Navigation onClick={onClick} />
-      <LoginForm />
+      <Navigation onClick={onClick}/>
+      {/* If we are in Registration Mode, render 
+      the Registration Form, otherwise render the 
+      Login form. */}
+      <div>
+      <RegistrationForm /> 
+      </div>
     </Container>
   );
 }

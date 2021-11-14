@@ -33,8 +33,7 @@ const useStyles = () =>
     },
   });
 
-const Navigation = (props) => {
-  const { history } = props
+const Navigation = ({ state, onClick }) => {
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -49,11 +48,16 @@ const Navigation = (props) => {
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
-  const handleMenuClick = () => {
+  
+  const handleCreateUserClick = (e) => {
     setAnchorEl(null);
-    console.log("Menu option clicked.")
+    console.log("Create User option clicked.")
   };
+
+  const handleMenuClick = (e) => {
+    setAnchorEl(null);
+  };
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -64,7 +68,7 @@ const Navigation = (props) => {
             PharmEasy
           </Typography>
 
-          <Button variant='contained' color='secondary' disableElevation>LOGIN</Button>
+          {/* <Button variant='contained' color='secondary' disableElevation>Login</Button> */}
 
           {auth && (
             <div>
@@ -93,8 +97,8 @@ const Navigation = (props) => {
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClick}
               >
-                <MenuItem onClick={() => handleMenuClick('/')}>Create User</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/')}>Login</MenuItem>
+                <MenuItem onClick={handleCreateUserClick}>Create User</MenuItem>
+                <MenuItem onClick={onClick}>Login</MenuItem>
 
               </Menu>
             </div>
