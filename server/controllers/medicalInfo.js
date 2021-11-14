@@ -10,7 +10,7 @@ export const addMedicalInfo = async (req, res) => {
 
         const result = await medicalInfoModal.create({ drugName, ndc, quantity, remaining, refills, prescriber, usedFor });
 
-        res.status(201).json({ result });
+        res.status(200).json({ result });
 
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
