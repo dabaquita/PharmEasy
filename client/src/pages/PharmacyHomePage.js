@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const PharmacyHomePage = () => {
   return (
     <div>    
-        <Navigation />
+        <Navigation isUserLoggedIn={true}/>
         <Box sx={{ display:"flex", flexDirection:"row"}} >
             <Box paddingTop={10} paddingLeft={5}>
               <Item>

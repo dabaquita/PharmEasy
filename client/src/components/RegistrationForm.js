@@ -27,27 +27,16 @@ const StyledPaper = styled(Paper, {
   ".MuiButton-root": { color: "#FF0000" },
 });
 
-const ButtonWrapper = styled("div", {
-  name: "ButtonWrapper",
-})({
-  marginLeft: "15%",
-  display: "flex-row",
-  flexDirection: "row",
-  position: "relative",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
 const SubmitButton = styled(Button, {
   name: "SubmitButton",
 })({
   display: "flex-row",
   position: "relative",
   margin: 10,
-  marginLeft: 15,
   padding: 10,
   alignItems: "center",
   justifyContent: "center",
+  minWidth: "100%"
 });
 
 const FormHeading = styled(Typography, {
@@ -156,26 +145,19 @@ const RegistrationForm = ({ switchForm }) => {
             // "& .MuiTextField-root": { m: 1, width: "25ch" },
             width: "auto",
             postion: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "row"
           }}
         >
-          <ButtonWrapper>
-            <SubmitButton
-              variant="contained"
-              style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
-              disableElevation={true}
-              onClick={handleSubmit}
-            >
-              Sign Up
-            </SubmitButton>
-            <SubmitButton
-              variant="contained"
-              style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
-              disableElevation={true}
-              onClick={switchForm}
-            >
-              Sign In
-            </SubmitButton>
-          </ButtonWrapper>
+          <SubmitButton
+            variant="contained"
+            style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
+            disableElevation={true}
+            onClick={handleSubmit}
+          >
+            Sign Up
+          </SubmitButton>
         </Box>
       </StyledPaper>
     </Box>
