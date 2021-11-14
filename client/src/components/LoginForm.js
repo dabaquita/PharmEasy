@@ -54,7 +54,10 @@ const FormHeading = styled(Typography, {
   justifyContent: "center",
 })
 
-const RegistrationForm = ({ onClick }) => {
+
+const LoginForm = () => {
+
+  
   return (
     <Box
       component="form"
@@ -69,32 +72,14 @@ const RegistrationForm = ({ onClick }) => {
       autoComplete="off"
     >
       <StyledPaper>
-        <FormHeading>Register</FormHeading>
+      <FormHeading>Login</FormHeading>
         <div>
           <TextField
             required
             fullWidth
             id="outlined-required"
-            label="First Name"
-            defaultValue="Enter your first name"
-            margin="normal"
-            color="primary"
-          />
-          <TextField
-            required
-            fullWidth
-            id="outlined-required"
-            label="Last Name"
-            defaultValue="Enter your last name"
-            margin="normal"
-            color="primary"
-          />
-          <TextField
-            required
-            fullWidth
-            id="outlined-required"
-            label="Email"
-            defaultValue="Email"
+            label="Username"
+            defaultValue="Username"
             margin="normal"
             color="primary"
           />
@@ -119,15 +104,16 @@ const RegistrationForm = ({ onClick }) => {
           <ButtonWrapper>
             <SubmitButton
               variant="contained"
-              style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
+              style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
               disabled={true}
               disableElevation={true}
-            >
+              >
               Sign Up
             </SubmitButton>
             <SubmitButton
               variant="contained"
-              style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
+              style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
+              elevation={0}
               disableElevation={true}
             >
               Sign In
@@ -139,4 +125,4 @@ const RegistrationForm = ({ onClick }) => {
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
