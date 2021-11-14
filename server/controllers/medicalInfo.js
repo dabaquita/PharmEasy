@@ -1,4 +1,4 @@
-import medicalInfoModal from "../models/medicalInfo";
+import medicalInfoModal from "../models/medicalInfo.js";
 
 export const addMedicalInfo = async (req, res) => {
     const { drugName, ndc, quantity, remaining, refills, prescriber, usedFor } = req.body;

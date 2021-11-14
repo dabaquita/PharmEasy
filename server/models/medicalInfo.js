@@ -10,9 +10,9 @@ const MedicalInfo = new mongoose.Schema(
         prescriber: { type: String },
         usedFor: { type: String }
     },
-    { collection: 'medicalInfo' }
+    { collection: 'MedicalInfo' }
 )
 
-const model = mongoose.model('BillingData', BillingInfo)
+const model = mongoose.model('MedicalInfo', MedicalInfo)
 
 export default model;
