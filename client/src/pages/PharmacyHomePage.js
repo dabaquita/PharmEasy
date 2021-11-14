@@ -6,6 +6,8 @@ import BasicInfoCard from '../components/BasicInfoCard/BasicInfoCard';
 import InsuranceInfoCard from '../components/InsuranceInfoCard/InsuranceInfoCard';
 import PharmacyWorkflowCard from '../components/PharmacyWorkflowCard/PharmacyWorkflowCard';
 import MedicationListGrid from '../components/MedicationList/MedicationListGrid';
+import lottie from "lottie-web";
+import { useEffect, useRef } from 'react';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -14,9 +16,47 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
+const Background = styled("div", {
+  name: "Background",
+  slot: "Wrapper",
+})({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  height: "100vh",
+  zIndex: -2,
+  margin: "auto",
+  padding: 0,
+  // backgroundColor: "purple"
+});
+
+const AnimationContainer = styled("div", {
+  name: "AnimationContainer",
+  slot: "Wrapper",
+})({
+  bottom: 0,
+  left: 0,
+  right: 0,
+  margin: "0",
+  width: "100%",
+  // backgroundColor: "purple"
+});
+
 const PharmacyHomePage = () => {
+  const container = useRef(null)
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../animations/bg.json')
+    });
+  }, []);
+
   return (
-    <div>    
+    <Background>    
         <Navigation />
         <Box sx={{ display:"flex", flexDirection:"row"}} >
             <Box paddingTop={10} paddingLeft={5}>
@@ -41,7 +81,8 @@ const PharmacyHomePage = () => {
               <MedicationListGrid />
             </Box>
         </Box>
-    </div>
+        <AnimationContainer className="container" ref={container} />
+    </Background>
   );
 };
 
