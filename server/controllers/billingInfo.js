@@ -1,4 +1,4 @@
-import billingInfoModal from "../models/billingInfo";
+import billingInfoModal from "../models/billingInfo.js";
 
 export const addBillingInfo = async (req, res) => {
     const { patientId, binNum, pcn, idNum, groupNum, relation, description } = req.body;
