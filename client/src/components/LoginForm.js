@@ -52,9 +52,9 @@ const FormHeading = styled(Typography, {
   position: "relative",
   alignItems: "center",
   justifyContent: "center",
-});
+})
 
-const LoginForm = () => {
+const LoginForm = ({ switchForms }) => {
   return (
     <Box
       component="form"
@@ -76,7 +76,6 @@ const LoginForm = () => {
             fullWidth
             id="outlined-required"
             label="Username"
-            defaultValue="Username"
             margin="normal"
             color="primary"
           />
@@ -85,7 +84,6 @@ const LoginForm = () => {
             fullWidth
             id="outlined-required"
             label="Password"
-            defaultValue="Password"
             margin="normal"
             color="primary"
           />
@@ -104,7 +102,8 @@ const LoginForm = () => {
               style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
               disabled={true}
               disableElevation={true}
-            >
+              onClick={switchForms}
+              >
               Sign Up
             </SubmitButton>
             <SubmitButton
@@ -112,6 +111,7 @@ const LoginForm = () => {
               style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
               elevation={0}
               disableElevation={true}
+              // onClick={} please log in
             >
               Sign In
             </SubmitButton>

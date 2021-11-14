@@ -10,5 +10,5 @@ API.interceptors.request.use((req) => {
   return req
 });
 
-export const register = (registerFormData) => API.post('/user/register', registerFormData);
-export const login = (loginFormData) => API.post('/user/login', loginFormData);
+export const register = (registerFormData) => API.post('/user/signup', registerFormData);
+export const login = (loginFormData) => API.post('/user/signin', loginFormData);

@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 
 const Patient = new mongoose.Schema(
     {

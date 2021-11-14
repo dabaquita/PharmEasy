@@ -46,7 +46,7 @@ const Navigation = ({ state, onClick }) => {
               <Button variant="contained" color="secondary" 
               onClick={onClick}
               disableElevation={true}>
-                Create User
+                Register
               </Button>
             </>
           ) : (

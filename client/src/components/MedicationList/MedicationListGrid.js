@@ -2,12 +2,12 @@ import * as React from "react";
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-    { field: 'Medication' },
+    { field: 'Medication', width: 130 },
     { field: 'Directions', width: 180 },
     { field: 'Quantity', type: 'number' },
     { field: 'Refills', type: 'number' },
     { field: 'Prescriber' },
-    { field: 'Use' },
+    { field: 'Use' , width: 180},
 
   ];
   
@@ -71,7 +71,7 @@ export default function ComparatorSortingGrid() {
   ]);
 
   return (
-    <div style={{ height: 300, width: '200%' }}>
+    <div style={{ height: 400, width: 800 }}>
       <DataGrid
         sortModel={sortModel}
         rows={rows}
