@@ -5,6 +5,8 @@ import LoginForm from "../components/LoginForm";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/system";
 import { useState } from "react";
+import lottie from "lottie-web";
+import { useEffect, useRef } from "react";
 
 const StyledPaper = styled(Paper, {
   name: "StyledPaper",
@@ -23,7 +25,47 @@ const StyledPaper = styled(Paper, {
   ".MuiButton-root": { color: "#FF0000" },
 });
 
+const Background = styled("div", {
+  name: "Background",
+  slot: "Wrapper",
+})({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  height: "100vh",
+  zIndex: -2,
+  margin: "auto",
+  padding: 0,
+  // backgroundColor: "purple"
+});
+
+const AnimationContainer = styled("div", {
+  name: "AnimationContainer",
+  slot: "Wrapper",
+})({
+  bottom: 0,
+  left: 0,
+  right: 0,
+  margin: "0",
+  width: "100%",
+  // backgroundColor: "purple"
+});
+
+
 const AuthPage = () => {
+  //const [light, setLight] = useState(false);
+  const container = useRef(null)
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../animations/bg.json')
+    });
+  }, []);
+
   const [toggleLogin, setToggleLogin] = useState(false);
 
   const handleLoginClick = (e) => {
@@ -33,11 +75,13 @@ const AuthPage = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Navigation onClick={handleLoginClick} />
-      { toggleLogin ? <LoginForm onSubmit={handleLoginClick} /> : <RegistrationForm onSubmit={handleLoginClick} /> }
-    </Container>
+    <Background>
+      <Navigation state={toggleLogin} onClick={handleLoginClick}/>
+      { toggleLogin ? <LoginForm onClick={handleLoginClick}/> : <RegistrationForm  onClick={handleLoginClick}/> }
+      <AnimationContainer className="container" ref={container} />
+    </Background>
   );
 };
 
 export default AuthPage;
+

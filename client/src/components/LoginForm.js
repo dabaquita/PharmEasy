@@ -69,14 +69,13 @@ const LoginForm = ({ switchForms }) => {
       autoComplete="off"
     >
       <StyledPaper>
-      <FormHeading>Login</FormHeading>
+        <FormHeading>Login</FormHeading>
         <div>
           <TextField
             required
             fullWidth
             id="outlined-required"
             label="Username"
-            defaultValue="Username"
             margin="normal"
             color="primary"
           />
@@ -85,7 +84,6 @@ const LoginForm = ({ switchForms }) => {
             fullWidth
             id="outlined-required"
             label="Password"
-            defaultValue="Password"
             margin="normal"
             color="primary"
           />
