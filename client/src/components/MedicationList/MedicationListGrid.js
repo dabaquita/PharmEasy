@@ -4,11 +4,10 @@ import { DataGrid } from '@mui/x-data-grid';
 const columns = [
     { field: 'Medication', width: 130 },
     { field: 'Directions', width: 180 },
-    { field: 'Quantity', type: 'number' },
+    { field: 'Quantity', type: 'number', width: 130 },
     { field: 'Refills', type: 'number' },
-    { field: 'Prescriber' },
-    { field: 'Use' , width: 180},
-
+    { field: 'Prescriber', type: String, width: 180 },
+    { field: 'Use' , width: 200},
   ];
   
 const rows = [
@@ -71,7 +70,7 @@ export default function ComparatorSortingGrid() {
   ]);
 
   return (
-    <div style={{ height: 400, width: 800 }}>
+    <div style={{ height: "50vh", width: "75%" }}>
       <DataGrid
         sortModel={sortModel}
         rows={rows}

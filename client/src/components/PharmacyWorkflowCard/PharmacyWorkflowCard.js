@@ -8,10 +8,10 @@ import Typography from '@mui/material/Typography';
 export default function FixedContainer() {
   return (
     <React.Fragment>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <Container fixed>
-                <Box sx={{ display: 'flex', flexDirection: 'row', width: 210, height: '20vh', borderRadius: 8}}>
-                    <Box sx={{ bgcolor: '#fdc716', width: 70, height: '20vh', borderRadius: 8}}>
+                <Box sx={{ display: 'flex', flexDirection: 'row', alignContent:"center", justifyContent: "center", borderRadius: 1}}>
+                    <Box sx={{  margin:"10", bgcolor: '#fdc716', width: 70, height: '20vh', borderRadius: 8}}>
                         <CardContent>
                         <br />
                             <Typography variant="h8" component="div" color="#ffffff">

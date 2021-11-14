@@ -42,6 +42,7 @@ const App = () => {
     <ThemeProvider theme={themeLight}>
       <CssBaseline />
       <Router>
+      <Navigation />
           <Routes>
             <Route path="/" exact element={AuthPage()}/>
             <Route path="/home" exact element={PharmacyHomePage()}/>

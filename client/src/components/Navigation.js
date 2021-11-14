@@ -1,5 +1,15 @@
 import * as React from "react";
-import {AppBar, Box, Button, CssBaseline, IconButton, Toolbar, Typography, useMediaQuery} from "@mui/material";
+import {
+  AppBar,
+  Box,
+
+  CssBaseline,
+  IconButton,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import Button from '@mui/material/Button';
 import theme from "../theme";
 import Logo from "./Logo";
 import PharmEasyLogo from "../images/PharmEasyLogo.svg";
@@ -37,35 +47,41 @@ const Navigation = ({ state, onClick, isUserLoggedIn }) => {
             PharmEasy
           </Typography>
 
-          <IconButton aria-label="Example">
-
-          </IconButton>
-          { isUserLoggedIn ? (
+          <IconButton aria-label="Example"></IconButton>
+          {isUserLoggedIn ? (
             <>
-              <Button variant="contained" color="secondary" 
-              disableElevation={true}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={onClick}
+                disableElevation={true}
+              >
                 Log Out
               </Button>
             </>
-          ) : (
-            state ? (
-              <>
-                <Button variant="contained" color="secondary" 
+          ) : state ? (
+            <>
+              <Button
+                variant="contained"
+                color="secondary"
                 onClick={onClick}
-                disableElevation={true}>
-                  Register
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="contained" color="secondary" onClick={onClick} disableElevation={true}>
-                  Login
-                </Button>
-              </>
-            )
-          )
-            
-        }
+                disableElevation={true}
+              >
+                Register
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={onClick}
+                disableElevation={true}
+              >
+                Login
+              </Button>
+            </>
+          )}
         </Toolbar>
       </AppBar>
       <Toolbar> </Toolbar>
