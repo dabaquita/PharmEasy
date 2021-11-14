@@ -11,26 +11,26 @@ export default function FixedContainer() {
       <CssBaseline />
       <Container fixed>
                 <Box sx={{ display: 'flex', flexDirection: 'row', width: 210, height: '20vh', borderRadius: 8}}>
-                    <Box sx={{ bgcolor: '#fff222', width: 70, height: '20vh', borderRadius: 8}}>
+                    <Box sx={{ bgcolor: '#fdc716', width: 70, height: '20vh', borderRadius: 8}}>
                         <CardContent>
                         <br />
-                            <Typography variant="h8" component="div">
+                            <Typography variant="h8" component="div" color="#ffffff">
                                 Input
                             </Typography>
                                 <br />
-                            <Typography variant="h8" component="div">
+                            <Typography variant="h8" component="div" color="#ffffff">
                                 4/2/0
                             </Typography>
                         </CardContent>
                     </Box>
-                    <Box sx={{ bgcolor: '#cfe8fc', width: 70, height: '20vh', borderRadius: 8}}>
+                    <Box sx={{ bgcolor: '#97d8e8', width: 70, height: '20vh', borderRadius: 8}}>
                     <CardContent>
                     <br />
-                            <Typography variant="h8" component="div">
+                            <Typography paddingLeft={1}variant="h8" component="div" color="#ffffff">
                                 Fill
                             </Typography>
                                 <br />
-                            <Typography variant="h8" component="div">
+                            <Typography variant="h8" component="div" color="#ffffff" >
                                 0/6/9
                             </Typography>
                         </CardContent>
@@ -38,11 +38,11 @@ export default function FixedContainer() {
                     <Box sx={{ bgcolor: '#cccccc', width: 70, height: '20vh', borderRadius: 8}}>
                     <CardContent>
                     <br />
-                            <Typography variant="h8" component="div">
+                            <Typography variant="h8" component="div" color="#ffffff">
                                 Verify
                             </Typography>
                                 <br />
-                            <Typography variant="h8" component="div">
+                            <Typography variant="h8" component="div" color="#ffffff">
                                 3/2/10
                             </Typography>
                         </CardContent>
