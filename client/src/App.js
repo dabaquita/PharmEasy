@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import LoginPage from './pages/LoginPage';
-import RegistrationPage from './pages/RegistrationPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AuthPage from './pages/AuthPage';
 
 const theme = createTheme({
   palette: {
@@ -15,26 +14,18 @@ const theme = createTheme({
   },
 });
 
-
-function App() {
-  const [toggleLogin, setToggleLogin] = useState(false)
-
-  const handleLoginClick = (e) => {
-    console.log("Testing App")
-    setToggleLogin(!toggleLogin)
-    console.log("Toggled form rendering state: " + toggleLogin)
-  };
-
-
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <Router>
       <Container component="main" maxWidth="xs">
-        {toggleLogin ? <> <LoginPage state={toggleLogin} onClick={handleLoginClick}/> </> : <> <RegistrationPage state={toggleLogin} onClick={handleLoginClick}/></>
-        }
-
+          <Routes>
+            <Route path="/" exact element={AuthPage()}/>
+          </Routes>
       </Container>
+      </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

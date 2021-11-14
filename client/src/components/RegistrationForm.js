@@ -3,7 +3,12 @@ import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import { register } from '../actions/auth';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
+// Components
 const StyledPaper = styled(Paper, {
   name: "LoginForm",
   slot: "Wrapper",
@@ -54,7 +59,27 @@ const FormHeading = styled(Typography, {
   justifyContent: "center",
 })
 
-const RegistrationForm = ({ onClick }) => {
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+
+const RegistrationForm = ({ switchForm }) => {
+  const [form, setForm] = useState(initialState);
+  const [isRegister, setIsRegister] = useState(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleFormChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isRegister) {
+      console.log(form);
+      dispatch(register(form, navigate));
+    }
+    else {
+      // we want to switch to the login page
+    }
+  };
+
   return (
     <Box
       component="form"
@@ -76,36 +101,52 @@ const RegistrationForm = ({ onClick }) => {
             fullWidth
             id="outlined-required"
             label="First Name"
-            defaultValue="Enter your first name"
             margin="normal"
             color="primary"
+            name="firstName"
+            onChange={(e) => handleFormChange(e)}
           />
           <TextField
             required
             fullWidth
             id="outlined-required"
             label="Last Name"
-            defaultValue="Enter your last name"
             margin="normal"
             color="primary"
+            name="lastName"
+            onChange={(e) => handleFormChange(e)}
           />
           <TextField
             required
             fullWidth
             id="outlined-required"
             label="Email"
-            defaultValue="Email"
             margin="normal"
             color="primary"
+            name="email"
+            onChange={(e) => handleFormChange(e)}
           />
           <TextField
             required
             fullWidth
             id="outlined-required"
             label="Password"
-            defaultValue="Password"
             margin="normal"
             color="primary"
+            type="password"
+            name="password"
+            onChange={(e) => handleFormChange(e)}
+          />
+          <TextField
+            required
+            fullWidth
+            id="outlined-required"
+            label="Confirm Password"
+            margin="normal"
+            color="primary"
+            type="password"
+            name="confirmPassword"
+            onChange={(e) => handleFormChange(e)}
           />
         </div>
         <Box
@@ -120,8 +161,8 @@ const RegistrationForm = ({ onClick }) => {
             <SubmitButton
               variant="contained"
               style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
-              disabled={true}
               disableElevation={true}
+              onClick={handleSubmit}
             >
               Sign Up
             </SubmitButton>
@@ -129,6 +170,7 @@ const RegistrationForm = ({ onClick }) => {
               variant="contained"
               style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
               disableElevation={true}
+              onClick={switchForm}
             >
               Sign In
             </SubmitButton>
