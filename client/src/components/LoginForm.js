@@ -54,10 +54,7 @@ const FormHeading = styled(Typography, {
   justifyContent: "center",
 })
 
-
-const LoginForm = () => {
-
-  
+const LoginForm = ({ switchForms }) => {
   return (
     <Box
       component="form"
@@ -107,6 +104,7 @@ const LoginForm = () => {
               style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
               disabled={true}
               disableElevation={true}
+              onClick={switchForms}
               >
               Sign Up
             </SubmitButton>
@@ -115,6 +113,7 @@ const LoginForm = () => {
               style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
               elevation={0}
               disableElevation={true}
+              // onClick={} please log in
             >
               Sign In
             </SubmitButton>

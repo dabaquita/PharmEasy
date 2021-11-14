@@ -8,19 +8,19 @@ export const register = (registerFormData, router) => async (dispatch) => {
     dispatch({ type: AUTH, data });
 
     router.push('/');
-  } catch {
+  } catch(error) {
     console.log(`Could not register due to ${error}`);
   }
 };
 
 export const login = (loginFormData, router) => async (dispatch) => {
   try {
-    const { data } = await api.register(loginFormData);
+    const { data } = await api.login(loginFormData);
 
     dispatch({ type: AUTH, data });
 
     router.push('/');
-  } catch {
+  } catch(error) {
     console.log(`Could not login due to ${error}`);
   }
 }
