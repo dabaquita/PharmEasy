@@ -1,4 +1,4 @@
-import { Container, Box, Grid } from '@mui/material';
+import { Box } from '@mui/material';
 import Navigation from '../components/Navigation.js';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/system';
@@ -12,64 +12,37 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(0.5),
     textAlign: 'left',
     color: theme.palette.text.secondary,
-  }));
+}));
 
-  const StyledPaper = styled(Paper, {
-    name: "StyledPaper",
-    slot: "Wrapper",
-  })({
-    color: '#6B8068',
-    backgroundColor: "white",
-    margin: "auto",
-    marginTop: 100,
-    borderRadius: 2,
-    height: 300,
-    weight: 300,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    ".MuiButton-root" : { color: "#FF0000"}
-  });
-
-
-
-function PharmacyHomePage() {
-  // const classes = useStyles();
-
+const PharmacyHomePage = () => {
   return (
     <div>    
         <Navigation />
-
         <Box sx={{ display:"flex", flexDirection:"row"}} >
             <Box paddingTop={10} paddingLeft={5}>
-                    <BasicInfoCard />
+              <Item>
+                <BasicInfoCard />
+              </Item>
             </Box>
 
             <Box paddingTop={4} paddingLeft={90}>
-                <PharmacyWorkflowCard />
+              <PharmacyWorkflowCard />
             </Box>
         </Box>
 
         <Box sx={{ display:"flex", flexDirection:"row"}} >
             <Box paddingTop={5} paddingLeft={5}>
-                    <InsuranceInfoCard />
+              <Item>
+                <InsuranceInfoCard />
+              </Item>
             </Box>
 
             <Box paddingTop={0} paddingLeft={10}>
-                <MedicationListGrid />
+              <MedicationListGrid />
             </Box>
-
         </Box>
-
-
-
-            
-
-        
     </div>
-
-
   );
-}
+};
 
 export default PharmacyHomePage;

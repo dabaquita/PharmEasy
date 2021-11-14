@@ -1,13 +1,13 @@
 import { AUTH } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
-export const register = (registerFormData, router) => async (dispatch) => {
+export const register = (registerFormData, navigation) => async (dispatch) => {
   try {
     const { data } = await api.register(registerFormData);
 
     dispatch({ type: AUTH, data });
 
-    router.push('/');
+    navigation('/home');
   } catch(error) {
     console.log(`Could not register due to ${error}`);
   }

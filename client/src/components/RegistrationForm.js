@@ -74,6 +74,7 @@ const RegistrationForm = ({ switchForm }) => {
     if (isRegister) {
       console.log(form);
       dispatch(register(form, navigate));
+      
     }
     else {
       // we want to switch to the login page

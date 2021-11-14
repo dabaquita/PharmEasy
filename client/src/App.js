@@ -1,7 +1,7 @@
-import { Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
+import PharmacyHomePage from './pages/PharmacyHomePage';
 
 const theme = createTheme({
   palette: {
@@ -18,11 +18,10 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-      <Container component="main" maxWidth="xs">
           <Routes>
             <Route path="/" exact element={AuthPage()}/>
+            <Route path="/home" exact element={PharmacyHomePage()}/>
           </Routes>
-      </Container>
       </Router>
     </ThemeProvider>
   );
