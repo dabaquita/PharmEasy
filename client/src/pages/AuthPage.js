@@ -76,7 +76,7 @@ const AuthPage = () => {
 
   return (
     <Background>
-      <Navigation state={toggleLogin} onClick={handleLoginClick}/>
+      <Navigation state={toggleLogin} onClick={handleLoginClick} isUserLoggedIn={false}/>
       { toggleLogin ? <LoginForm onClick={handleLoginClick}/> : <RegistrationForm  onClick={handleLoginClick}/> }
       <AnimationContainer className="container" ref={container} />
     </Background>

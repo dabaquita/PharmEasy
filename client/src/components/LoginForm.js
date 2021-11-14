@@ -22,27 +22,16 @@ const StyledPaper = styled(Paper, {
   ".MuiButton-root": { color: "#FF0000" },
 });
 
-const ButtonWrapper = styled("div", {
-  name: "ButtonWrapper",
-})({
-  marginLeft: "15%",
-  display: "flex-row",
-  flexDirection: "row",
-  position: "relative",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
 const SubmitButton = styled(Button, {
   name: "SubmitButton",
 })({
   display: "flex-row",
   position: "relative",
   margin: 10,
-  marginLeft: 15,
   padding: 10,
   alignItems: "center",
   justifyContent: "center",
+  minWidth: "47.5%"
 });
 
 const FormHeading = styled(Typography, {
@@ -94,28 +83,29 @@ const LoginForm = ({ switchForms }) => {
             // "& .MuiTextField-root": { m: 1, width: "25ch" },
             width: "auto",
             postion: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "row"
           }}
         >
-          <ButtonWrapper>
-            <SubmitButton
-              variant="contained"
-              style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
-              disabled={true}
-              disableElevation={true}
-              onClick={switchForms}
-              >
-              Sign Up
-            </SubmitButton>
-            <SubmitButton
-              variant="contained"
-              style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
-              elevation={0}
-              disableElevation={true}
-              // onClick={} please log in
+          <SubmitButton
+            variant="contained"
+            style={{ backgroundColor: "#219ebc", color: "#FFFFFF" }}
+            disableElevation={true}
+            onClick={switchForms}
             >
-              Sign In
-            </SubmitButton>
-          </ButtonWrapper>
+            Sign In
+          </SubmitButton>
+          <SubmitButton
+            variant="contained"
+            style={{ backgroundColor: "#97d8e8", color: "#FFFFFF" }}
+            elevation={0}
+            disableElevation={true}
+            // onClick={} please log in
+          >
+            Forgot Password?
+          </SubmitButton>
         </Box>
       </StyledPaper>
     </Box>

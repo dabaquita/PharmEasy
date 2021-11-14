@@ -10,7 +10,7 @@ const handleProfileMenuClose = () => {};
 const handleMenuClose = () => {};
 const handleMenuOpen = () => {};
 
-const Navigation = ({ state, onClick }) => {
+const Navigation = ({ state, onClick, isUserLoggedIn }) => {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -40,22 +40,32 @@ const Navigation = ({ state, onClick }) => {
           <IconButton aria-label="Example">
 
           </IconButton>
-
-          {state ? (
+          { isUserLoggedIn ? (
             <>
               <Button variant="contained" color="secondary" 
-              onClick={onClick}
               disableElevation={true}>
-                Register
+                Log Out
               </Button>
             </>
           ) : (
-            <>
-              <Button variant="contained" color="secondary" onClick={onClick} disableElevation={true}>
-                Login
-              </Button>
-            </>
-          )}
+            state ? (
+              <>
+                <Button variant="contained" color="secondary" 
+                onClick={onClick}
+                disableElevation={true}>
+                  Register
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="contained" color="secondary" onClick={onClick} disableElevation={true}>
+                  Login
+                </Button>
+              </>
+            )
+          )
+            
+        }
         </Toolbar>
       </AppBar>
       <Toolbar> </Toolbar>
